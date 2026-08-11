@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - AstroVeda | Authentic Vedic Astrology</title>
+
+  <!-- Tailwind CSS + DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Celestial Styling -->
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+      color: #1a102f;
+      font-weight: 700;
+    }
+    .gold-btn:hover {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+    }
+    .astro-card {
+      background: rgba(24, 14, 56, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .astro-card:hover {
+      border-color: rgba(245, 158, 11, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col justify-between">
+
+
+<!-- navbar -->
+{% include 'navbar.html'  %}
+
+
+
+  <!-- PAGE HEADER BANNER -->
+  <section class="relative py-16 bg-gradient-to-b from-[#180e38] to-[#0f0826] border-b border-amber-500/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8 text-center">
+      <div class="badge badge-outline border-amber-400/60 text-amber-300 mb-3 px-4 py-2 text-xs uppercase tracking-wider">
+        Sacred Knowledge & Modern Guidance
+      </div>
+      <h1 class="text-3xl md:text-5xl font-serif font-bold gold-gradient-text">About AstroVeda</h1>
+      <p class="text-slate-400 mt-3 max-w-xl mx-auto text-sm md:text-base">
+        Bridging ancient Vedic astrology with modern clarity to empower your life choices.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN ABOUT CONTENT SECTION -->
+  <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Left Column: Astrologer Profile Graphic / Bio Card -->
+      <div class="relative">
+        <div class="astro-card p-8 rounded-3xl relative z-10 space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-20 h-20 rounded-full bg-amber-500/20 border-2 border-amber-400 flex items-center justify-center text-amber-300 text-3xl">
+              <i class="fa-solid fa-user-astronaut"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-serif font-bold text-slate-100">Acharya Devraj</h3>
+              <p class="text-amber-400 text-sm">Lead Vedic Astrologer & Gemologist</p>
+              <div class="flex items-center gap-1 text-amber-400 text-xs mt-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <span class="text-slate-400 ml-1">(25+ Yrs Exp)</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-slate-300 text-sm leading-relaxed">
+            "Astrology is not about changing your destiny — it is about equipping you with the right wisdom and timing so you can navigate life's cosmic tides with confidence."
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-700/60 text-center">
+            <div class="p-3 bg-[#0f0826] rounded-xl border border-amber-500/20">
+              <span class="block text-2xl font-bold gold-gradient-text">50,000+</span>
+              <span class="text-xs text-slate-400">Horoscopes Read</span>
+            </div>
+            <div class="p-3 bg-[#0f0826] rounded-xl border border-amber-500/20">
+              <span class="block text-2xl font-bold gold-gradient-text">100%</span>
+              <span class="text-xs text-slate-400">Authentic Remedies</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative Glow Background -->
+        <div class="absolute -top-6 -left-6 w-full h-full bg-amber-500/10 rounded-3xl blur-2xl pointer-events-none"></div>
+      </div>
+
+      <!-- Right Column: Story & Vision -->
+      <div class="space-y-6">
+        <div class="space-y-2">
+          <span class="text-amber-400 text-sm uppercase tracking-wider font-semibold">Our Sacred Purpose</span>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold leading-snug">
+            Guided by <span class="gold-gradient-text">Celestial Precision</span>, Driven by Compassion
+          </h2>
+        </div>
+
+        <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+          Founded in 2010, AstroVeda was born out of a desire to eliminate fear-based astrology and replace it with logical, empowering, and practical Vedic guidance.
+        </p>
+
+        <p class="text-slate-400 text-sm leading-relaxed">
+          Whether you are facing career stagnation, marital compatibility dilemmas, or spiritual seeking, our calculations rely strictly on authentic Parashari and Jaimini Vedic principles combined with planetary degree movements.
+        </p>
+
+        <!-- Bullet Highlights -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-start gap-3 text-sm text-slate-200">
+            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+            <span>No baseless fear-mongering — clear and honest planetary facts.</span>
+          </div>
+          <div class="flex items-start gap-3 text-sm text-slate-200">
+            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+            <span>Practical, easy-to-do remedies suited for modern lifestyles.</span>
+          </div>
+          <div class="flex items-start gap-3 text-sm text-slate-200">
+            <i class="fa-solid fa-circle-check text-amber-400 mt-1"></i>
+            <span>Complete privacy guarantee — your birth details remain 100% confidential.</span>
+          </div>
+        </div>
+
+        <div class="pt-4">
+          <a href="appointment.html" class="btn gold-btn border-none px-6">
+            Consult With Us Today <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CORE VALUES / WHY CHOOSE US -->
+  <section class="bg-[#140b33] py-16 border-y border-amber-500/10">
+    <div class="max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-3xl font-serif font-bold gold-gradient-text">Pillars of AstroVeda</h2>
+        <p class="text-slate-400 text-sm mt-2">What sets our consultation methodology apart from the rest</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Value 1 -->
+        <div class="astro-card p-6 rounded-2xl text-center space-y-4">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-2xl">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100">Scientific Vedic Approach</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            We compute planetary longitudes, Dasha periods, and Transit (Gochar) effects with mathematical exactness.
+          </p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="astro-card p-6 rounded-2xl text-center space-y-4">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-2xl">
+            <i class="fa-solid fa-shield-cat"></i>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100">Ethical & Honest Advice</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            We never recommend unnecessarily expensive rituals or gemstones unless genuinely planetary aligned.
+          </p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="astro-card p-6 rounded-2xl text-center space-y-4">
+          <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400 text-2xl">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="text-lg font-serif font-bold text-slate-100">Holistic Life Guidance</h3>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Beyond predictions, we give actionable life, career, and spiritual strategies tailored to your chart.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-amber-400 text-xs font-semibold uppercase tracking-wider">Words of Gratitude</span>
+      <h2 class="text-3xl font-serif font-bold gold-gradient-text mt-1">What Our Clients Say</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Review 1 -->
+      <div class="astro-card p-6 rounded-2xl space-y-4">
+        <div class="flex items-center gap-1 text-amber-400 text-xs">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="text-slate-300 text-xs leading-relaxed italic">
+          "The Kundli breakdown provided by Acharya Ji gave me immense clarity during my career transition. Highly accurate predictions!"
+        </p>
+        <div class="pt-2 border-t border-slate-700/50 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 text-xs font-bold">RK</div>
+          <div>
+            <span class="block text-xs font-semibold text-slate-200">Rohan Kapoor</span>
+            <span class="block text-[10px] text-slate-400">Software Engineer, Bengaluru</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="astro-card p-6 rounded-2xl space-y-4">
+        <div class="flex items-center gap-1 text-amber-400 text-xs">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="text-slate-300 text-xs leading-relaxed italic">
+          "Matchmaking analysis was detailed and honest. They explained the compatibility points without creating unnecessary fear."
+        </p>
+        <div class="pt-2 border-t border-slate-700/50 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 text-xs font-bold">PS</div>
+          <div>
+            <span class="block text-xs font-semibold text-slate-200">Pooja Sharma</span>
+            <span class="block text-[10px] text-slate-400">Architect, Delhi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="astro-card p-6 rounded-2xl space-y-4">
+        <div class="flex items-center gap-1 text-amber-400 text-xs">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+        <p class="text-slate-300 text-xs leading-relaxed italic">
+          "The gemstone suggestion worked wonders for my focus and business growth. Genuinely authentic service."
+        </p>
+        <div class="pt-2 border-t border-slate-700/50 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-300 text-xs font-bold">AS</div>
+          <div>
+            <span class="block text-xs font-semibold text-slate-200">Amit Singhania</span>
+            <span class="block text-[10px] text-slate-400">Entrepreneur, Mumbai</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION BANNER -->
+  <section class="max-w-7xl mx-auto px-4 lg:px-8 mb-16 w-full">
+    <div class="bg-gradient-to-r from-[#180e38] via-[#241452] to-[#180e38] p-8 md:p-12 rounded-3xl border border-amber-500/30 text-center space-y-6">
+      <h2 class="text-2xl md:text-4xl font-serif font-bold text-slate-100">Ready to Discover What Planets Say About You?</h2>
+      <p class="text-slate-300 text-sm max-w-xl mx-auto">
+        Book a 1-on-1 confidential session with our master astrologer and take charge of your life's journey.
+      </p>
+      <a href="appointment.html" class="btn gold-btn btn-lg border-none shadow-xl">
+        <i class="fa-solid fa-calendar-check mr-2"></i> Book Appointment Now
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+ {% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Cosmic Path Not Found | AstroVeda</title>
+
+  <!-- Tailwind CSS + DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+      color: #1a102f;
+      font-weight: 700;
+    }
+    .gold-btn:hover {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+    }
+    .astro-card {
+      background: rgba(24, 14, 56, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col justify-between">
+
+  <!-- SIMPLE BRAND HEADER -->
+  <header class="py-6 border-b border-amber-500/10">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <a href="index.html" class="inline-flex items-center gap-2">
+        <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-400/40 flex items-center justify-center text-amber-400 text-xl">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <span class="text-2xl font-extrabold tracking-wider font-serif gold-gradient-text">AstroVeda</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- 404 MAIN HERO -->
+  <main class="max-w-3xl mx-auto px-4 py-16 my-auto text-center">
+    <div class="astro-card p-10 md:p-14 rounded-3xl space-y-6 border-2 border-amber-500/30 shadow-2xl">
+      
+      <div class="w-24 h-24 mx-auto rounded-full bg-amber-500/10 border border-amber-400/40 flex items-center justify-center text-amber-400 text-5xl animate-pulse">
+        <i class="fa-solid fa-compass"></i>
+      </div>
+
+      <h1 class="text-6xl md:text-8xl font-serif font-black gold-gradient-text tracking-widest">404</h1>
+
+      <h2 class="text-xl md:text-2xl font-serif font-bold text-slate-100">
+        Lost in the Cosmic Void?
+      </h2>
+
+      <p class="text-xs md:text-sm text-slate-300 leading-relaxed max-w-md mx-auto">
+        The celestial page you are searching for seems to have aligned into a black hole or moved to a different orbit.
+      </p>
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
+        <a href="index.html" class="btn gold-btn border-none px-6">
+          <i class="fa-solid fa-house mr-1"></i> Return Home
+        </a>
+        <a href="contact.html" class="btn btn-outline border-amber-400/40 text-amber-300 hover:bg-amber-500/20 px-6">
+          <i class="fa-solid fa-headset mr-1"></i> Get Support
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0a051b] text-slate-300 border-t border-amber-500/20 py-6 text-center text-xs text-slate-500">
+    <p>© 2026 AstroVeda. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

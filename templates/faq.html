@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - AstroVeda</title>
+
+  <!-- Tailwind CSS + DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+      color: #1a102f;
+      font-weight: 700;
+    }
+    .gold-btn:hover {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+    }
+    .astro-card {
+      background: rgba(24, 14, 56, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col justify-between">
+  <!-- NAVBAR -->
+  
+  {% include 'navbar.html' %}
+
+  <!-- BREADCRUMB & HEADER -->
+  <section class="py-12 bg-[#140b33] border-b border-amber-500/10 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-xs breadcrumbs text-slate-400 mb-3 justify-center">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="text-amber-400">FAQ</li>
+        </ul>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-serif font-bold gold-gradient-text mb-4">Frequently Asked Questions</h1>
+      <p class="text-slate-300 text-sm md:text-base">
+        Find answers to common questions about consultations, birth charts, gemstone recommendations, and online sessions.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ CONTENT SECTION -->
+  <section class="max-w-4xl mx-auto px-4 lg:px-8 py-16 space-y-8">
+
+    <!-- GENERAL CONSULTATION FAQS -->
+    <div class="space-y-4">
+      <h2 class="text-xl font-serif font-bold text-amber-400 flex items-center gap-2">
+        <i class="fa-solid fa-circle-question"></i> Consultations & Bookings
+      </h2>
+
+      <div class="collapse collapse-plus astro-card rounded-2xl">
+        <input type="radio" name="faq-accordion" checked="checked" /> 
+        <div class="collapse-title text-base font-semibold text-slate-100">
+          What details do I need to provide for an accurate Kundli reading?
+        </div>
+        <div class="collapse-content text-xs md:text-sm text-slate-300 leading-relaxed">
+          <p>To prepare your accurate natal chart (Lagna Kundli), we need three key details: your exact <strong>Date of Birth</strong>, <strong>Time of Birth</strong>, and <strong>Place of Birth</strong>. If your exact birth time is unknown, we can perform Birth Time Rectification (BTR) prior to the reading.</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-plus astro-card rounded-2xl">
+        <input type="radio" name="faq-accordion" /> 
+        <div class="collapse-title text-base font-semibold text-slate-100">
+          How are the online consultation sessions conducted?
+        </div>
+        <div class="collapse-content text-xs md:text-sm text-slate-300 leading-relaxed">
+          <p>Online sessions are conducted securely via Google Meet or Zoom. Once you book an appointment, you will receive an automated email containing the calendar invite, session link, and instructions on how to prepare your questions.</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-plus astro-card rounded-2xl">
+        <input type="radio" name="faq-accordion" /> 
+        <div class="collapse-title text-base font-semibold text-slate-100">
+          Is my personal information and consultation confidential?
+        </div>
+        <div class="collapse-content text-xs md:text-sm text-slate-300 leading-relaxed">
+          <p>100% yes. We adhere to strict privacy protocols. Your birth details, personal history, and discussion points are never shared with any third party.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- REMEDIES & SERVICES FAQS -->
+    <div class="space-y-4 pt-6">
+      <h2 class="text-xl font-serif font-bold text-amber-400 flex items-center gap-2">
+        <i class="fa-solid fa-gem"></i> Remedies & Astrological Guidance
+      </h2>
+
+      <div class="collapse collapse-plus astro-card rounded-2xl">
+        <input type="radio" name="faq-accordion-2" /> 
+        <div class="collapse-title text-base font-semibold text-slate-100">
+          Do you sell gemstones directly or provide lab certificates?
+        </div>
+        <div class="collapse-content text-xs md:text-sm text-slate-300 leading-relaxed">
+          <p>We provide genuine, unheated, and government-lab certified Vedic gemstones upon request. Every gemstone comes with an authenticity certificate detailing its carat weight, origin, and optical properties.</p>
+        </div>
+      </div>
+
+      <div class="collapse collapse-plus astro-card rounded-2xl">
+        <input type="radio" name="faq-accordion-2" /> 
+        <div class="collapse-title text-base font-semibold text-slate-100">
+          Can remedies alter planetary influences completely?
+        </div>
+        <div class="collapse-content text-xs md:text-sm text-slate-300 leading-relaxed">
+          <p>Planetary transits represent karmic patterns. Vedic remedies (Mantra, Daan, Yantra, Gemstones) act as a cosmic umbrella—they mitigate harsh planetary effects and enhance favorable outcomes, allowing you to navigate difficult phases with clarity and protection.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STILL HAVE QUESTIONS CTA -->
+    <div class="astro-card p-8 rounded-3xl text-center space-y-4 border border-amber-400/30 mt-12">
+      <h3 class="text-2xl font-serif font-bold gold-gradient-text">Still Have Unanswered Questions?</h3>
+      <p class="text-xs md:text-sm text-slate-300">
+        Our support team is available to assist you with session scheduling and package choices.
+      </p>
+      <div class="pt-2">
+        <a href="contact.html" class="btn gold-btn border-none px-6">
+          <i class="fa-solid fa-headset mr-1"></i> Contact Support
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  {% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pricing Plans & Consultation Fee - AstroVeda</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+            color: #1a102f;
+            font-weight: 700;
+        }
+
+        .astro-card {
+            background: rgba(24, 14, 56, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .popular-card {
+            background: rgba(30, 18, 68, 0.9);
+            border: 2px solid rgba(245, 158, 11, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col">
+
+{% include 'navbar.html' %}
+
+
+<!-- HEADER -->
+
+<section class="py-12 bg-[#140b33] border-b border-amber-500/10 text-center">
+
+    <div class="max-w-4xl mx-auto px-4">
+
+        <div class="text-xs breadcrumbs text-slate-400 mb-3 justify-center">
+
+            <ul>
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+
+                <li class="text-amber-400">
+                    Pricing
+                </li>
+            </ul>
+
+        </div>
+
+
+        <h1 class="text-3xl md:text-5xl font-serif font-bold gold-gradient-text mb-4">
+            Transparent Consultation Plans
+        </h1>
+
+
+        <p class="text-slate-300 text-sm md:text-base">
+            Choose a consultation package tailored to your questions.
+            Every session includes personalized Remedies & Gemstone Recommendations.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- PRICING CARDS -->
+
+<section class="max-w-7xl mx-auto px-4 lg:px-8 py-16">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+        {% for plan in plans %}
+
+        <div class="astro-card {% if plan.is_popular %}popular-card{% endif %} p-8 rounded-3xl flex flex-col justify-between space-y-6 relative">
+
+
+            {% if plan.is_popular %}
+
+            <div class="absolute -top-4 right-8">
+
+                <span class="badge gold-btn border-none px-4 py-3 text-xs shadow-md">
+                    MOST POPULAR
+                </span>
+
+            </div>
+
+            {% endif %}
+
+
+
+            <div>
+
+                {% if plan.badge %}
+
+                <div class="badge bg-amber-500/10 text-amber-400 border-amber-500/30 p-3 text-xs mb-4">
+                    {{ plan.badge }}
+                </div>
+
+                {% endif %}
+
+
+
+                <h2 class="text-2xl font-serif font-bold text-slate-100">
+                    {{ plan.name }}
+                </h2>
+
+
+                <p class="text-xs text-slate-400 mt-1">
+                    {{ plan.short_description }}
+                </p>
+
+
+
+                <!-- PRICE -->
+
+                <div class="mt-6 pb-6 border-b border-slate-700/60">
+
+                    <span class="text-4xl font-serif font-bold gold-gradient-text">
+                        ₹{{ plan.price|floatformat:0 }}
+                    </span>
+
+                    <span class="text-xs text-slate-400">
+                        / {{ plan.duration }}
+                    </span>
+
+                </div>
+
+
+
+                <!-- FEATURES -->
+
+                <ul class="mt-6 space-y-3 text-xs text-slate-300">
+
+                    {% for feature in plan.get_features %}
+
+                    <li class="flex items-start gap-3">
+
+                        <i class="fa-solid fa-check text-amber-400 mt-0.5"></i>
+
+                        <span>
+                            {{ feature }}
+                        </span>
+
+                    </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- BOOK BUTTON -->
+
+            <a href="{% url 'appointment' %}?plan={{ plan.slug }}"
+               class="btn {% if plan.is_popular %}gold-btn border-none shadow-lg{% else %}btn-outline border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900{% endif %} w-full mt-6">
+
+                Book {{ plan.name }}
+
+            </a>
+
+        </div>
+
+        {% empty %}
+
+        <div class="col-span-full text-center py-16">
+
+            <i class="fa-solid fa-circle-exclamation text-amber-400 text-3xl mb-4"></i>
+
+            <p class="text-slate-400">
+                No pricing plans available at the moment.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+<!-- PRIVACY BANNER -->
+
+<section class="max-w-7xl mx-auto px-4 lg:px-8 mb-16">
+
+    <div class="astro-card p-8 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+
+
+        <div class="flex items-center gap-4">
+
+            <div class="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-400/40 flex items-center justify-center text-amber-400 text-2xl shrink-0">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3 class="font-serif font-bold text-lg text-slate-100">
+                    100% Privacy & Confidentiality
+                </h3>
+
+                <p class="text-xs text-slate-400">
+                    Your personal details and birth chart information are strictly kept confidential.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a href="{% url 'faq' %}"
+           class="btn btn-sm btn-ghost text-amber-400 hover:bg-amber-500/10">
+
+            Read Pricing FAQ
+
+            <i class="fa-solid fa-arrow-right ml-1"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+{% include 'footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astrology Insights & Vedic Blogs - AstroVeda</title>
+
+  <!-- Tailwind CSS + DaisyUI CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-btn {
+      background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+      color: #1a102f;
+      font-weight: 700;
+    }
+    .gold-btn:hover {
+      background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+    }
+    .astro-card {
+      background: rgba(24, 14, 56, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+    }
+  </style>
+</head>
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col justify-between">
+
+   <!-- NAVBAR -->
+  
+  {% include 'navbar.html' %}
+
+  <!-- BREADCRUMB & HEADER -->
+  <section class="py-12 bg-[#140b33] border-b border-emerald-500/10 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="text-xs breadcrumbs text-slate-400 mb-3 justify-center">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="text-emerald-400">Blog</li>
+        </ul>
+      </div>
+      <h1 class="text-3xl md:text-5xl font-serif font-bold gold-gradient-text mb-4">Vedic Knowledge & Cosmic Guides</h1>
+      <p class="text-slate-300 text-sm md:text-base">
+        Explore deep astrological insights, planetary transit impacts, gemstone remedies, and daily cosmic wisdom.
+      </p>
+    </div>
+  </section>
+
+  <!-- FEATURED POST & BLOG GRID -->
+  <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16 space-y-12">
+    
+    <!-- FEATURED POST CARD -->
+    <div class="astro-card p-6 md:p-8 rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-2 border-emerald-500/40">
+      <div class="lg:col-span-7 space-y-4">
+        <span class="badge bg-emerald-500/20 text-emerald-300 border-emerald-500/30 text-xs px-3 py-2">
+          <i class="fa-solid fa-star mr-1"></i> Featured Article
+        </span>
+        <h2 class="text-2xl md:text-3xl font-serif font-bold text-slate-100 hover:text-emerald-300 transition-colors">
+          <a href="blog-details.html">Understanding Saturn’s Transit (Sade Sati): Myth vs. Reality</a>
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Saturn (Shani) is often feared in Vedic astrology, yet it acts as the ultimate cosmic teacher. Learn how Saturn's transit influences career milestones and simple daily remedies to turn karmic challenges into long-term success.
+        </p>
+        <div class="flex items-center gap-6 text-xs text-slate-400 pt-2">
+          <span><i class="fa-regular fa-calendar text-emerald-400 mr-1"></i> May 12, 2026</span>
+          <span><i class="fa-regular fa-clock text-emerald-400 mr-1"></i> 6 min read</span>
+          <span><i class="fa-solid fa-tag text-emerald-400 mr-1"></i> Planetary Transits</span>
+        </div>
+        <div class="pt-2">
+          <a href="blog-details.html" class="btn gold-btn btn-sm border-none">
+            Read Full Article <i class="fa-solid fa-arrow-right ml-1"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="w-full h-64 lg:h-72 bg-[#180e38] rounded-2xl border border-emerald-500/20 flex flex-col items-center justify-center text-emerald-400 p-6 text-center">
+          <i class="fa-solid fa-moon text-6xl mb-3 opacity-80"></i>
+          <span class="text-xs uppercase tracking-widest text-slate-400">Cosmic Astrological Insights</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARTICLES GRID -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Post 1 -->
+      <article class="astro-card rounded-3xl p-6 flex flex-col justify-between space-y-4 hover:border-emerald-400/50 transition-all">
+        <div class="space-y-3">
+          <div class="h-44 bg-[#180e38] rounded-2xl border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i class="fa-solid fa-gem text-5xl"></i>
+          </div>
+          <div class="flex items-center gap-3 text-[11px] text-emerald-300">
+            <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Gemstones</span>
+            <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Apr 28, 2026</span>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-slate-100 hover:text-emerald-300">
+            <a href="blog-details.html">How to Choose the Right Gemstone for Your Zodiac Sign</a>
+          </h3>
+          <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+            Wearing the wrong gemstone can trigger planetary conflicts. Discover how Yellow Sapphire and Blue Sapphire interact with your Lagna chart.
+          </p>
+        </div>
+        <a href="blog-details.html" class="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+          Read Story <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </a>
+      </article>
+
+      <!-- Post 2 -->
+      <article class="astro-card rounded-3xl p-6 flex flex-col justify-between space-y-4 hover:border-emerald-400/50 transition-all">
+        <div class="space-y-3">
+          <div class="h-44 bg-[#180e38] rounded-2xl border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i class="fa-solid fa-[#0] fa-heart text-5xl"></i>
+          </div>
+          <div class="flex items-center gap-3 text-[11px] text-emerald-300">
+            <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Relationships</span>
+            <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Apr 15, 2026</span>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-slate-100 hover:text-emerald-300">
+            <a href="blog-details.html">The Truth About Manglik Dosha & Marriage Compatibility</a>
+          </h3>
+          <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+            Is Manglik Dosha always harmful? Learn about Mars cancelation rules (Bhanga) and how compatibility is measured beyond 36 Gunas.
+          </p>
+        </div>
+        <a href="blog-details.html" class="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+          Read Story <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </a>
+      </article>
+
+      <!-- Post 3 -->
+      <article class="astro-card rounded-3xl p-6 flex flex-col justify-between space-y-4 hover:border-emerald-400/50 transition-all">
+        <div class="space-y-3">
+          <div class="h-44 bg-[#180e38] rounded-2xl border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+            <i class="fa-solid fa-briefcase text-5xl"></i>
+          </div>
+          <div class="flex items-center gap-3 text-[11px] text-emerald-300">
+            <span class="bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Career</span>
+            <span class="text-slate-400"><i class="fa-regular fa-calendar mr-1"></i> Mar 30, 2026</span>
+          </div>
+          <h3 class="font-serif font-bold text-lg text-slate-100 hover:text-emerald-300">
+            <a href="blog-details.html">10th House Secrets: Decoding Your Ideal Career Path</a>
+          </h3>
+          <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed">
+            Your 10th house ruler and Sun placement determine whether corporate jobs, business endeavors, or creative arts will bring lasting prosperity.
+          </p>
+        </div>
+        <a href="blog-details.html" class="text-xs text-emerald-400 font-semibold hover:underline flex items-center gap-1">
+          Read Story <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="flex justify-center pt-8">
+      <div class="join border border-emerald-500/20 rounded-xl overflow-hidden">
+        <button class="join-item btn btn-sm bg-[#180e38] text-slate-400 hover:bg-emerald-500/20">«</button>
+        <button class="join-item btn btn-sm bg-emerald-500 text-slate-900 font-bold">1</button>
+        <button class="join-item btn btn-sm bg-[#180e38] text-slate-300 hover:bg-emerald-500/20">2</button>
+        <button class="join-item btn btn-sm bg-[#180e38] text-slate-300 hover:bg-emerald-500/20">3</button>
+        <button class="join-item btn btn-sm bg-[#180e38] text-slate-400 hover:bg-emerald-500/20">»</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  {% include 'footer.html' %}
+
+</body>
+</html>

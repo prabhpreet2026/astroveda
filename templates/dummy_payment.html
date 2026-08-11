@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment - AstroVeda</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+            color: #1a102f;
+            font-weight: 700;
+        }
+
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 100%);
+        }
+    </style>
+
+</head>
+
+
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col">
+
+
+{% include 'navbar.html' %}
+
+
+<section class="flex-1 flex items-center justify-center px-4 py-16">
+
+    <div class="w-full max-w-md">
+
+        <div class="bg-[#180e38] border border-amber-500/20 rounded-3xl p-8 shadow-2xl">
+
+
+            <!-- ICON -->
+
+            <div class="w-16 h-16 mx-auto rounded-2xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-2xl">
+
+                <i class="fa-solid fa-lock"></i>
+
+            </div>
+
+
+            <h1 class="text-2xl font-serif font-bold text-center gold-gradient-text mt-5">
+                Secure Payment
+            </h1>
+
+
+            <p class="text-center text-xs text-slate-400 mt-2">
+                AstroVeda Demo Payment Gateway
+            </p>
+
+
+            <!-- DEMO -->
+
+            <div class="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 mt-5 text-center">
+
+                <p class="text-xs text-amber-300">
+                    Demo Mode — No real money will be charged.
+                </p>
+
+            </div>
+
+
+            <!-- SERVICE -->
+
+            <div class="border-b border-slate-700/60 py-5">
+
+                <p class="text-xs text-slate-400">
+                    Consultation Service
+                </p>
+
+
+                <div class="flex items-center justify-between mt-2">
+
+                    <h3 class="font-semibold">
+                        {{ service.name }}
+                    </h3>
+
+                    <span class="font-bold text-amber-400">
+                        ₹{{ service.price|floatformat:0 }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CUSTOMER -->
+
+            <div class="py-5 space-y-3">
+
+                <div class="flex justify-between text-sm">
+
+                    <span class="text-slate-400">
+                        Customer
+                    </span>
+
+                    <span>
+                        {{ appointment_data.full_name }}
+                    </span>
+
+                </div>
+
+
+                <div class="flex justify-between text-sm">
+
+                    <span class="text-slate-400">
+                        Phone
+                    </span>
+
+                    <span>
+                        {{ appointment_data.phone }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOTAL -->
+
+            <div class="border-t border-slate-700/60 pt-5">
+
+                <div class="flex justify-between items-center">
+
+                    <span class="text-lg font-semibold">
+                        Total Amount
+                    </span>
+
+                    <span class="text-3xl font-bold gold-gradient-text">
+                        ₹{{ service.price|floatformat:0 }}
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUCCESS -->
+
+            <a href="{% url 'dummy_payment_success' %}"
+               class="btn gold-btn border-none w-full mt-7">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                Pay ₹{{ service.price|floatformat:0 }}
+
+            </a>
+
+
+            <!-- CANCEL -->
+
+            <a href="{% url 'dummy_payment_failed' %}"
+               class="btn btn-outline border-red-400/40 text-red-300 w-full mt-3">
+
+                <i class="fa-solid fa-xmark"></i>
+
+                Cancel Payment
+
+            </a>
+
+
+            <p class="text-center text-[11px] text-slate-500 mt-5">
+                This is a demo payment gateway for testing only.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% include 'footer.html' %}
+
+</body>
+</html>

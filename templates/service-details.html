@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ service.name }} - AstroVeda</title>
+
+    <!-- Tailwind CSS + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+          rel="stylesheet"
+          type="text/css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <style>
+
+        .gold-gradient-text {
+            background: linear-gradient(
+                135deg,
+                #f6d365 0%,
+                #fda085 100%
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .gold-btn {
+            background: linear-gradient(
+                135deg,
+                #d4af37 0%,
+                #f3e5ab 50%,
+                #aa7c11 100%
+            );
+
+            color: #1a102f;
+            font-weight: 700;
+        }
+
+
+        .gold-btn:hover {
+            background: linear-gradient(
+                135deg,
+                #f3e5ab 0%,
+                #d4af37 100%
+            );
+        }
+
+
+        .detail-card {
+            background: rgba(24, 14, 56, 0.65);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+
+        .feature-item {
+            transition: all 0.3s ease;
+        }
+
+
+        .feature-item:hover {
+            transform: translateX(5px);
+            border-color: rgba(16, 185, 129, 0.5);
+        }
+
+    </style>
+
+</head>
+
+
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col">
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    {% include 'navbar.html' %}
+
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <section class="relative py-16 bg-gradient-to-b from-[#180e38] to-[#0f0826] border-b border-emerald-500/10">
+
+        <div class="max-w-5xl mx-auto px-4 lg:px-8 text-center">
+
+
+            <!-- SERVICE ICON -->
+
+            <div class="w-20 h-20 mx-auto rounded-3xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-3xl mb-6">
+
+                <i class="{{ service.icon }}"></i>
+
+            </div>
+
+
+
+            <!-- BADGE -->
+
+            {% if service.badge %}
+
+            <div class="mb-4">
+
+                <span class="badge bg-emerald-500/20 text-emerald-300 border-emerald-500/40 px-4 py-3">
+
+                    {{ service.badge }}
+
+                </span>
+
+            </div>
+
+            {% endif %}
+
+
+
+            <!-- SERVICE NAME -->
+
+            <h1 class="text-3xl md:text-5xl font-serif font-bold gold-gradient-text">
+
+                {{ service.name }}
+
+            </h1>
+
+
+
+            <!-- SHORT DESCRIPTION -->
+
+            <p class="text-slate-400 mt-5 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+
+                {{ service.short_description }}
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 py-16 w-full">
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+
+            <!-- =========================
+                 LEFT CONTENT
+            ========================== -->
+
+            <div class="lg:col-span-2 space-y-8">
+
+
+                <!-- ABOUT SERVICE -->
+
+                <div class="detail-card rounded-3xl p-8">
+
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                        <h2 class="text-2xl font-serif font-bold">
+
+                            About This Service
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="text-slate-300 leading-8 whitespace-pre-line">
+
+                        {{ service.description }}
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- WHAT'S INCLUDED -->
+
+                <div class="detail-card rounded-3xl p-8">
+
+                    <div class="flex items-center gap-3 mb-6">
+
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+
+                            <i class="fa-solid fa-list-check"></i>
+
+                        </div>
+
+                        <h2 class="text-2xl font-serif font-bold">
+
+                            What's Included
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        {% for feature in service.get_features %}
+
+                        <div class="feature-item flex items-center gap-3 p-4 rounded-xl bg-[#0f0826]/60 border border-slate-700/50">
+
+                            <div class="w-9 h-9 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+
+                                <i class="fa-solid fa-check text-emerald-400"></i>
+
+                            </div>
+
+                            <span class="text-slate-300 text-sm">
+
+                                {{ feature }}
+
+                            </span>
+
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONSULTATION PROCESS -->
+
+                <div class="detail-card rounded-3xl p-8">
+
+                    <div class="flex items-center gap-3 mb-7">
+
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
+
+                            <i class="fa-solid fa-route"></i>
+
+                        </div>
+
+                        <h2 class="text-2xl font-serif font-bold">
+
+                            Consultation Process
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+
+
+                        <!-- STEP 1 -->
+
+                        <div>
+
+                            <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center font-bold text-emerald-300 text-lg">
+
+                                1
+
+                            </div>
+
+                            <h4 class="font-semibold mt-3">
+
+                                Book
+
+                            </h4>
+
+                            <p class="text-slate-400 text-xs mt-2">
+
+                                Choose your preferred consultation.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- STEP 2 -->
+
+                        <div>
+
+                            <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center font-bold text-emerald-300 text-lg">
+
+                                2
+
+                            </div>
+
+                            <h4 class="font-semibold mt-3">
+
+                                Birth Details
+
+                            </h4>
+
+                            <p class="text-slate-400 text-xs mt-2">
+
+                                Provide your accurate birth information.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- STEP 3 -->
+
+                        <div>
+
+                            <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center font-bold text-emerald-300 text-lg">
+
+                                3
+
+                            </div>
+
+                            <h4 class="font-semibold mt-3">
+
+                                Consultation
+
+                            </h4>
+
+                            <p class="text-slate-400 text-xs mt-2">
+
+                                Connect with our astrology expert.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <!-- STEP 4 -->
+
+                        <div>
+
+                            <div class="w-12 h-12 mx-auto rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center font-bold text-emerald-300 text-lg">
+
+                                4
+
+                            </div>
+
+                            <h4 class="font-semibold mt-3">
+
+                                Guidance
+
+                            </h4>
+
+                            <p class="text-slate-400 text-xs mt-2">
+
+                                Receive personalized guidance and remedies.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =========================
+                 RIGHT BOOKING CARD
+            ========================== -->
+
+            <div>
+
+
+                <div class="detail-card rounded-3xl p-7 lg:sticky lg:top-6">
+
+
+                    <!-- ICON -->
+
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-2xl mb-6">
+
+                        <i class="{{ service.icon }}"></i>
+
+                    </div>
+
+
+
+                    <p class="text-slate-400 text-sm">
+
+                        Consultation Price
+
+                    </p>
+
+
+
+                    <div class="text-4xl font-bold gold-gradient-text mt-2">
+
+                        ₹{{ service.price|floatformat:0 }}
+
+                    </div>
+
+
+
+                    <div class="divider border-slate-700"></div>
+
+
+
+                    <!-- FEATURES SUMMARY -->
+
+                    <div class="space-y-3 mb-7">
+
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+
+                            <i class="fa-solid fa-video text-emerald-400"></i>
+
+                            Phone / Online Consultation
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+
+                            <i class="fa-solid fa-user-tie text-emerald-400"></i>
+
+                            Expert Astrologer Guidance
+
+                        </div>
+
+
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+
+                            <i class="fa-solid fa-file-pdf text-emerald-400"></i>
+
+                            Personalized Guidance Report
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- BOOK BUTTON -->
+
+                    <a href="{% url 'appointment' %}?service={{ service.slug }}" class="btn gold-btn w-full border-none text-base">
+    <i class="fa-solid fa-calendar-check"></i>
+    Book Appointment
+</a>
+
+
+
+                    <!-- CONTACT BUTTON -->
+
+                    <a href="{% url 'contact' %}"
+                       class="btn btn-outline w-full mt-3 border-emerald-400 text-emerald-300 hover:bg-emerald-500 hover:text-white">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                        Contact Support
+
+                    </a>
+
+
+
+                    <p class="text-center text-xs text-slate-500 mt-5">
+
+                        Secure your consultation and get personalized astrological guidance.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         BACK TO SERVICES
+    ========================== -->
+
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 pb-16">
+
+        <a href="{% url 'services' %}"
+           class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-sm font-semibold">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back to All Services
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    {% include 'footer.html' %}
+
+
+</body>
+
+</html>

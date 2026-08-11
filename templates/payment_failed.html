@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Cancelled - AstroVeda</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        .gold-btn {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+            color: #1a102f;
+            font-weight: 700;
+        }
+
+    </style>
+
+</head>
+
+
+<body class="bg-[#0f0826] text-slate-100 min-h-screen flex flex-col">
+
+
+{% include 'navbar.html' %}
+
+
+<section class="flex-1 flex items-center justify-center px-4 py-16">
+
+    <div class="max-w-md w-full text-center bg-[#180e38] border border-red-500/20 rounded-3xl p-10">
+
+
+        <!-- ERROR ICON -->
+
+        <div class="w-20 h-20 mx-auto rounded-full bg-red-500/10 border border-red-400/30 flex items-center justify-center mb-6">
+
+            <i class="fa-solid fa-xmark text-3xl text-red-400"></i>
+
+        </div>
+
+
+        <h1 class="text-2xl font-serif font-bold text-red-300">
+            Payment Cancelled
+        </h1>
+
+
+        <p class="text-slate-400 mt-4 leading-relaxed">
+
+            Your payment was cancelled, so your appointment
+            has not been booked.
+
+        </p>
+
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-4 mt-6">
+
+            <p class="text-sm text-red-300">
+
+                No amount has been charged.
+
+            </p>
+
+        </div>
+
+
+        <div class="flex flex-col sm:flex-row gap-3 mt-7">
+
+
+            <a href="{% url 'services' %}"
+               class="btn btn-outline border-slate-500 text-slate-300 flex-1">
+
+                Back to Services
+
+            </a>
+
+
+            <a href="{% url 'appointment' %}"
+               class="btn gold-btn border-none flex-1">
+
+                Try Again
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% include 'footer.html' %}
+
+</body>
+</html>

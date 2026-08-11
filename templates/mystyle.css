@@ -1,0 +1,97 @@
+/* ==========================================================================
+   ASTROVEDA GLOBAL MASTER STYLESHEET
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL THEME VARIABLES (Change colors here to update the entire site)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Background Colors */
+  --bg-dark-main: #0f0826;      /* Main Page Background */
+  --bg-dark-card: #180e38;      /* Cards, Dropdowns & Inner Elements */
+  --bg-dark-header: #140b33;    /* Breadcrumbs & Section Headers */
+  --bg-dark-footer: #0a051b;    /* Footer Background */
+
+  /* Primary Accent & Gold Gradients */
+  --gold-primary: #d4af37;
+  --gold-light: #f3e5ab;
+  --gold-dark: #aa7c11;
+  --gold-text-light: #f6d365;
+  --gold-text-dark: #fda085;
+
+  /* Text & Border Colors */
+  --text-primary: #f8fafc;
+  --text-muted: #cbd5e1;
+  --border-gold-alpha: rgba(245, 158, 11, 0.2);
+  --border-gold-hover: rgba(245, 158, 11, 0.5);
+
+  /* Master Gradients */
+  --text-gradient: linear-gradient(135deg, var(--gold-text-light) 0%, var(--gold-text-dark) 100%);
+  --btn-gradient: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 50%, var(--gold-dark) 100%);
+  --btn-gradient-hover: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 100%);
+}
+
+/* --------------------------------------------------------------------------
+   2. BASE & BODY STYLES
+   -------------------------------------------------------------------------- */
+body {
+  background-color: var(--bg-dark-main) !important;
+  color: var(--text-primary);
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   3. CUSTOM REUSABLE UI COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Gold Gradient Heading Text */
+.gold-gradient-text {
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Master Gold Action Button */
+.gold-btn {
+  background: var(--btn-gradient) !important;
+  color: #1a102f !important;
+  font-weight: 700 !important;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.gold-btn:hover {
+  background: var(--btn-gradient-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -5px rgba(212, 175, 55, 0.3);
+}
+
+/* Glassmorphism Astro Cards */
+.astro-card {
+  background: rgba(24, 14, 56, 0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold-alpha) !important;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.astro-card:hover {
+  border-color: var(--border-gold-hover) !important;
+}
+
+/* Custom Scrollbar for Smooth UI */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-dark-card);
+  border-radius: 4px;
+  border: 1px solid var(--border-gold-alpha);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}

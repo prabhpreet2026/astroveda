@@ -1,0 +1,67 @@
+
+  <!-- TOP HEADER / ANNOUNCEMENT BAR -->
+  <div class="bg-[#180e38] border-b border-amber-500/20 text-xs py-2 px-4 hidden md:block">
+     <div class="max-w-7xl mx-auto flex justify-between items-center text-slate-300">
+       <div class="flex items-center gap-6">
+         <span><i class="fa-solid fa-phone text-amber-400 mr-2"></i> +91 98765 43210</span>
+         <span><i class="fa-solid fa-envelope text-amber-400 mr-2"></i> info@astrocelestial.com</span>
+       </div>
+       <div class="flex items-center gap-4">
+         <span class="text-amber-300/80"><i class="fa-solid fa-star text-amber-400 mr-1"></i> 100% Certified Vedic Astrologers</span>
+       </div>
+     </div>
+   </div>
+
+  <!-- MAIN NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#0f0826]/90 backdrop-blur-md border-b border-amber-500/20">
+    <div class="navbar max-w-7xl mx-auto px-4 lg:px-8">
+      <div class="navbar-start">
+        <!-- Mobile Dropdown -->
+        <div class="dropdown lg:hidden">
+          <div tabindex="0" role="button" class="btn btn-ghost btn-circle text-amber-400">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow-2xl bg-[#180e38] rounded-xl w-64 border border-amber-500/30 gap-2">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" class="text-amber-400 font-semibold">About Us</a></li>
+            <li><a href="{% url 'services' %}">Services</a></li>
+            <li><a href="{% url 'pricing' %}">Pricing</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'faq' %}">FAQ</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <div class="pt-2">
+              <a href="{% url 'appointment' %}" class="btn btn-sm border-none gold-btn w-full">Book Consultation</a>
+            </div>
+          </ul>
+        </div>
+
+        <!-- Logo -->
+        <a href="{% url 'index' %}" class="flex items-center gap-2">
+          <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-400/40 flex items-center justify-center text-amber-400 text-xl">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <span class="text-xl md:text-2xl font-extrabold tracking-wider font-serif gold-gradient-text">AstroVeda</span>
+        </a>
+      </div>
+
+      <!-- Desktop Links -->
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1 gap-1 text-sm font-medium">
+          <li><a href="{% url 'index' %}" class="hover:text-amber-400">Home</a></li>
+          <li><a href="{% url 'about' %}" class="text-amber-400 font-semibold">About Us</a></li>
+          <li><a href="{% url 'services' %}" class="hover:text-amber-400">Services</a></li>
+          <li><a href="{% url 'pricing' %}" class="hover:text-amber-400">Pricing</a></li>
+          <li><a href="{% url 'blog' %}" class="hover:text-amber-400">Blog</a></li>
+          <li><a href="{% url 'faq' %}" class="hover:text-amber-400">FAQ</a></li>
+          <li><a href="{% url 'contact' %}" class="hover:text-amber-400">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="navbar-end">
+        <a href="{% url 'appointment' %}" class="btn border-none gold-btn shadow-lg shadow-amber-500/10 px-5">
+          <i class="fa-solid fa-calendar-check mr-1"></i> Book Now
+        </a>
+      </div>
+    </div>
+  </header>
+
